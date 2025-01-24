@@ -1,0 +1,42 @@
+[package]
+name = "solicite-app"
+version = "0.1.0"
+description = "A solicite sugggestion App"
+authors = ["stanley <stanley@stanley.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "solicite_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2.2.2", features = ["macos-private-api"] }
+tauri-plugin-opener = "2.2.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0.135"
+anyhow = "1.0.94"
+thiserror = "2.0.11"
+elasticsearch = "8.17.0-alpha.1"
+serde_yml = "0.0.12"
+tokio = { version = "1.43.0", features = ["full"] }
+url = "2.5.4"
+umya-spreadsheet = "2.2.1"
+office-crypto = "0.1.0"
+regex = "1.7.3"
+lazy_static = "1.4.0"
+hashbrown = "0.15.2"
+tauri-plugin-fs = "2"
+tauri-plugin-dialog = "2"
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+window-vibrancy = "0.5.2"
+chrono = "0.4.39"
+validator = {version = "0.19.0", features = ["derive"] }

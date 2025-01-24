@@ -1,0 +1,22 @@
+es:
+  nodes:
+   - http://127.0.0.1:9200
+   - http://127.0.0.2:9200
+   - http://127.0.0.3:9200
+  user: admin
+  password: 123456
+
+count:
+  category_id: 58
+  idx: index_name1
+  size_top: 10
+  field_agg: classifyId
+  path: resources.json
+  category_path: classify.json
+  total_name: '合计'
+
+excel:
+  channel_insert_start_column: 'F' # 渠道插入数据起始列
+  channel_location: 'B2' # 渠道起始单元位置
+  category_insert_start_column: 'C' # 分类插入数据起始列
+  category_location: 'B2' # 分类起始单元位置
